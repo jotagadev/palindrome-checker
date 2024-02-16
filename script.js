@@ -2,8 +2,10 @@ const checkButton = document.getElementById('check-btn');
 const userInput = document.getElementById('text-input');
 const result = document.getElementById('result');
 
+
 function clearInput () {
-    userInput.value = userInput.value.replace(/[^a-zA-Z]/g, '');
+    userInput.value = userInput.value.replace(/[^a-zA-Z0-9]/g, '');
+    userInput.value = userInput.value.toUpperCase();
 }
 
 function validation () {
@@ -13,7 +15,7 @@ function validation () {
     console.log(userInput.value);
 
     if (!userInput.value){
-        alert("Please input a value");
+        alert("Coloque um valor válido!");
         return 0;
     }   
 
@@ -21,21 +23,24 @@ function validation () {
 
 }
 
-function setResult (stringInvertida) {
-    if (stringInvertida === userInput.value){
-        result.innerText = `${userInput.value} is a palindrome`;
+function setResult (str, originalValue) {
+    if (str === userInput.value){
+        result.innerText = `${originalValue} é um palíndromo`;
     } else {
-        result.innerText = `${userInput.value} is not a palindrome`
+        result.innerText = `${originalValue} não é um palíndromo`;
     };
+    userInput.value = '';
 }
 
 
 function checkPalindrome() {
+    const originalUserInput = userInput.value;
+
     if( validation() ){
 
-        const stringInvertida = userInput.value.split('').reverse().join('');
-        console.log(stringInvertida);
-        setResult(stringInvertida);
+        const inverseString = userInput.value.split('').reverse().join('');
+        console.log(inverseString);
+        setResult(inverseString, originalUserInput);
     }
 
 }

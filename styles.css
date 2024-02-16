@@ -22,25 +22,29 @@ body {
 .container-box {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     margin: auto;
     width: 40%;
     height: 60%;
     background-color:aliceblue;
     border-radius: 25px;
-    box-shadow : 5px 5px 5px;
+    box-shadow : 9px 5px 20px 9px;
     border:1px solid rgb(74, 128, 243)
 }
 
 h1 {
     letter-spacing: 2px;
-    font-size: 36px;
+    font-size: 42px;
+    color: rgb(74, 128, 243);
+    text-shadow: 1px 1px rgb(43, 42, 42);
 }
 
 #label-input {
-    font-size: 18px;
+    font-size: 24px;
     width: 40%;
     align-self: center;
+    text-shadow: 1px 1px gray
 }
 
 #text-input {
@@ -50,13 +54,19 @@ h1 {
     color: aliceblue;
     font-family: "Bebas Neue", sans-serif;
     height: 22px;
-    font-size: 20px;
+    font-size: 24px;
     width: 40%;
     align-self: center;
-    box-shadow: 2px 2px 2px;
+    box-shadow: 2px 2px 9px 2px rgb(68, 68, 68);
+    text-align: center;
+    
 }
 
-#check-btn {
+#text-input:focus {
+    outline: 0;
+}
+
+.btn {
     width: 20%;
     align-self: center;
     background-color: black;
@@ -65,12 +75,16 @@ h1 {
     padding: 5px;
     border-radius: 15px;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
+    transition: 0.3s;
+    
 }
 
-#check-btn:hover {
+.btn:hover {
     background-color: rgb(74, 128, 243);
     cursor: pointer;
+    transform: scale(120%);
+    transition: 0.3s;
 }
 
 #result {

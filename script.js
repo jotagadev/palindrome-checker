@@ -1,7 +1,10 @@
 const checkButton = document.getElementById('check-btn');
 const userInput = document.getElementById('text-input');
 const result = document.getElementById('result');
-
+const tutorialButton = document.getElementById('tutorial-btn');
+const containerBox = document.querySelector('.container-box');
+const mainContainer = document.querySelector('.container-main');
+const tutorialContainer = document.querySelector('.container-tutorial')
 
 function clearInput () {
     userInput.value = userInput.value.replace(/[^a-zA-Z0-9]/g, '');
@@ -45,4 +48,21 @@ function checkPalindrome() {
 
 }
 
+function openTutorial () {
+
+    tutorialContainer.classList.toggle('hide');
+    mainContainer.classList.toggle('hide');
+    result.classList.toggle('hide');
+
+    document.getElementById('container-info-btn').onclick = () => {
+        tutorialContainer.classList.toggle('hide');
+        mainContainer.classList.toggle('hide');
+        result.classList.toggle('hide');
+    }
+
+}
+
+
 checkButton.addEventListener('click', checkPalindrome);
+tutorialButton.addEventListener('click', openTutorial);
+

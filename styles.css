@@ -34,8 +34,8 @@ body {
     display: grid;
     height: 70%;
     justify-items: center;
-    grid-template-rows: 1fr 1fr 3fr 15%;
-    grid-template-columns: 100%
+    grid-template-rows: 1fr 10px 1fr 15%;
+    grid-template-columns: 100%;
 }
 
 .container-tutorial {
@@ -112,6 +112,11 @@ h1 {
     transform: scale(120%);
     transition: 0.3s;
     color: rgb(28, 119, 238);
+}
+
+#tutorial-btn {
+    width: 17%;
+    font-size: 18px;
 }
 
 #result {
